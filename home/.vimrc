@@ -80,7 +80,7 @@ map <A-Down> :tabedit<CR>
 imap <A-Down> <C-O>:tabedit<CR>
 
 map <A-Up> :q<CR>
-imap <A-Up> <C-O>:q<CR>
+imap <A-Up> <C-\><C-O>:q<CR>
 
 "use control-c/x/v for X11 clipboard
 vmap <C-c> "+y<CR>
@@ -90,7 +90,7 @@ vmap <C-x> "+c<CR>
 map <C-x> "+c<CR>
 
 map <C-v> "+p<CR>
-imap <C-v> <C-O>"+p<CR>
+imap <C-v> <C-\><C-O>"+p<CR>
 vmap <C-v> "+p<CR>
 
 inoremap <C-w> <C-O>:w<CR>
@@ -98,8 +98,9 @@ inoremap <C-w> <C-O>:w<CR>
 " just insert the longest common match:
 set completeopt=menu,longest,preview
 
-imap <C-Down> <C-R>=pumvisible() ? "\<lt>C-X>\<lt>C-I>" : "\<lt>Down>"<CR>
-imap <C-Up> <C-R>=pumvisible() ? "\<lt>C-X>\<lt>C-I>" : "\<lt>Up>"<CR>
+imap <C-Down> <C-R>=pumvisible() ? "\<lt>C-N>" : "\<lt>C-X>\<lt>C-I>"<CR>
+imap <C-Up> <C-R>=pumvisible() ? "\<lt>C-P>" : "\<lt>C-X>\<lt>C-I>"<CR>
+
 
 "" don't put things anywhere
 set backupdir=~/.vimdata/backup//
