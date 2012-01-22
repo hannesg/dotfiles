@@ -54,7 +54,7 @@ set history=100
 
 " visual shifting (does not exit Visual mode)
 vnoremap < <gv
-vnoremap > >gv 
+vnoremap > >gv
 
 "set selectmode=key
 "set keymodel+=startsel
@@ -94,6 +94,14 @@ imap <C-v> <C-O>"+gP
 vmap <C-v> "+gP
 
 inoremap <C-w> <C-O>:w<CR>
+
+"" indent guides :)
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_guide_size=1
+let g:indent_guides_enable_on_vim_startup = 1
+
+hi IndentGuidesOdd  ctermbg=None
+hi IndentGuidesEven ctermbg=DarkGray
 
 " just insert the longest common match:
 set completeopt=menu,longest,preview
