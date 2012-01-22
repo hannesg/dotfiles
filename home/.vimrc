@@ -56,6 +56,8 @@ set history=100
 vnoremap < <gv
 vnoremap > >gv 
 
+set laststatus=2
+
 "set selectmode=key
 "set keymodel+=startsel
 
