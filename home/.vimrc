@@ -83,15 +83,15 @@ map <A-Up> :q<CR>
 imap <A-Up> <C-\><C-O>:q<CR>
 
 "use control-c/x/v for X11 clipboard
-vmap <C-c> "+y<CR>
-map <C-c> "+y<CR>
+vmap <C-c> "+y
+map <C-c> "+y
 
-vmap <C-x> "+c<CR>
-map <C-x> "+c<CR>
+vmap <C-x> "+c
+map <C-x> "+c
 
-map <C-v> "+p<CR>
-imap <C-v> <C-\><C-O>"+p<CR>
-vmap <C-v> "+p<CR>
+map <C-v> "+gP
+imap <C-v> <C-O>"+gP
+vmap <C-v> "+gP
 
 inoremap <C-w> <C-O>:w<CR>
 
@@ -99,7 +99,7 @@ inoremap <C-w> <C-O>:w<CR>
 set completeopt=menu,longest,preview
 
 imap <C-Down> <C-R>=pumvisible() ? "\<lt>C-N>" : "\<lt>C-X>\<lt>C-I>"<CR>
-imap <C-Up> <C-R>=pumvisible() ? "\<lt>C-P>" : "\<lt>C-X>\<lt>C-I>"<CR>
+imap <C-Up> <C-R>=pumvisible() ? "\<lt>C-N>" : "\<lt>C-X>\<lt>C-I>"<CR>
 
 
 "" don't put things anywhere
