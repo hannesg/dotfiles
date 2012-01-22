@@ -56,8 +56,6 @@ set history=100
 vnoremap < <gv
 vnoremap > >gv 
 
-set laststatus=2
-
 "set selectmode=key
 "set keymodel+=startsel
 
@@ -109,6 +107,16 @@ set backupdir=~/.vimdata/backup//
 set dir=~/.vimdata/swap//
 set viewdir=~/.vimdata/view//
 set undodir=~/.vimdata/undo//
+
+"" set statusline=%#StatColor#%F%=[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y[%c,%l/%L]%*
+
+au InsertLeave * hi TabLineSel cterm=NONE
+au InsertEnter * hi TabLineSel cterm=Bold
+
+hi TabLine ctermbg=None ctermfg=DarkBlue cterm=NONE
+hi TabLineSel ctermbg=None cterm=NONE
+hi TabLineFill ctermbg=None cterm=NONE
+
 
 ""
 call pathogen#infect()
