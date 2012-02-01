@@ -132,6 +132,9 @@ color jellybeans
 hi link IndentGuidesEven VertSplit
 hi IndentGuidesOdd None
 
+let g:ctrlp_open_new_file = 'r'
+let g:ctrlp_open_multi = '1t'
+
 "" use local vimrc if available {
  if filereadable(expand("~/.vimrc.local"))
    source ~/.vimrc.local

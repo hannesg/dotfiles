@@ -7,3 +7,6 @@
 [submodule "home/.vim/bundle/jellybeans"]
 	path = home/.vim/bundle/jellybeans
 	url = git://github.com/nanotech/jellybeans.vim.git
+[submodule "home/.vim/bundle/ctrlp"]
+	path = home/.vim/bundle/ctrlp
+	url = git://github.com/kien/ctrlp.vim.git
