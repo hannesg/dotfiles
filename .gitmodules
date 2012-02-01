@@ -4,3 +4,6 @@
 [submodule "home/.vim/bundle/vim-indent-guides"]
 	path = home/.vim/bundle/vim-indent-guides
 	url = git://github.com/nathanaelkane/vim-indent-guides.git
+[submodule "home/.vim/bundle/jellybeans"]
+	path = home/.vim/bundle/jellybeans
+	url = git://github.com/nanotech/jellybeans.vim.git

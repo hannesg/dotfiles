@@ -100,9 +100,6 @@ let g:indent_guides_auto_colors = 0
 let g:indent_guides_guide_size=1
 let g:indent_guides_enable_on_vim_startup = 1
 
-hi IndentGuidesOdd  ctermbg=None
-hi IndentGuidesEven ctermbg=DarkGray
-
 " just insert the longest common match:
 set completeopt=menu,longest,preview
 
@@ -128,6 +125,12 @@ hi TabLineFill ctermbg=None cterm=NONE
 
 ""
 call pathogen#infect()
+call pathogen#helptags()
+
+color jellybeans
+
+hi link IndentGuidesEven VertSplit
+hi IndentGuidesOdd None
 
 "" use local vimrc if available {
  if filereadable(expand("~/.vimrc.local"))
