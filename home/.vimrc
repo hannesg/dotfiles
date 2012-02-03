@@ -100,11 +100,23 @@ let g:indent_guides_auto_colors = 0
 let g:indent_guides_guide_size=1
 let g:indent_guides_enable_on_vim_startup = 1
 
-" just insert the longest common match:
+"" just insert the longest common match:
 set completeopt=menu,longest,preview
 
 imap <C-Down> <C-R>=pumvisible() ? "\<lt>C-N>" : "\<lt>C-X>\<lt>C-I>"<CR>
 imap <C-Up> <C-R>=pumvisible() ? "\<lt>C-N>" : "\<lt>C-X>\<lt>C-I>"<CR>
+
+"" ignore some common things
+set wildignore+=.hg,.git,.svn " Version control
+set wildignore+=*.aux,*.out,*.toc " LaTeX intermediate files
+set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg " binary images
+set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
+set wildignore+=*.spl " compiled spelling word lists
+set wildignore+=*.sw? " Vim swap files
+set wildignore+=*.DS_Store " OSX bullshit
+set wildignore+=*.luac " Lua byte code
+set wildignore+=*.pyc " Python byte code
+set wildignore+=.rbx " rbx byte code
 
 
 "" don't put things anywhere
@@ -132,8 +144,12 @@ color jellybeans
 hi link IndentGuidesEven VertSplit
 hi IndentGuidesOdd None
 
+
+"" CTRLP {
 let g:ctrlp_open_new_file = 'r'
 let g:ctrlp_open_multi = '1t'
+
+"" }
 
 "" use local vimrc if available {
  if filereadable(expand("~/.vimrc.local"))
