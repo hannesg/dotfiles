@@ -141,8 +141,8 @@ call pathogen#helptags()
 
 color jellybeans
 
-hi link IndentGuidesEven VertSplit
-hi IndentGuidesOdd None
+"hi link IndentGuidesEven VertSplit
+"hi IndentGuidesOdd None
 
 
 "" CTRLP {
