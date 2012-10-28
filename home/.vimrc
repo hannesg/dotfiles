@@ -20,80 +20,26 @@ set expandtab                   " use spaces, not tabs (optional)
 set backspace=eol,start  " backspace through everything in insert mode
 
 "" Searching
-set hlsearch                    " highlight matches
 set incsearch                   " incremental searching
-set ignorecase                  " searches are case insensitive...
-set smartcase                   " ... unless they contain at least one capital letter
 
 "" Mapleader
 let mapleader = ','
 
 "" TABS!!!!
-map <A-Left> :tabprev<CR>
-map <A-Right> :tabnext<CR>
-imap <A-Left> <C-\><C-O>:tabprev<CR>
-imap <A-Right> <C-\><C-O>:tabnext<CR>
+map <C-h> :tabprev<CR>
+map <C-l> :tabnext<CR>
+imap <C-h> <C-\><C-O>:tabprev<CR>
+imap <C-l> <C-\><C-O>:tabnext<CR>
 
 "" Display whitespace
 set list
 set listchars=eol:$,tab:>-,trail:‧,extends:>,precedes:<
-
-"" me wants backups
-"" set backup
-"" me wants saved view state
-au BufWinLeave * silent! mkview "make vim save view (state) (folds, cursor, etc)
-au BufWinEnter * silent! loadview "make vim load view (state) (folds, cursor, etc)
-
-"" persitent undo
-set undofile
-set undolevels=100 "maximum number of changes that can be undone
-set undoreload=1000 "maximum number lines to save for undo on a buffer reload
-
 "" enough space
 set history=100
 
 " visual shifting (does not exit Visual mode)
 vnoremap < <gv
 vnoremap > >gv
-
-"set selectmode=key
-"set keymodel+=startsel
-
-"easy selecting with shift
-map <S-Left> <Esc>vh
-map <S-Right> <Esc>vl
-map <S-Up> <Esc>vk
-map <S-Down> <Esc>vj
-imap <S-Left> <C-\><C-O>vh
-imap <S-Right> <C-\><C-O>vl
-imap <S-Up> <C-\><C-O>vk
-imap <S-Down> <C-\><C-O>vj
-
-"don't leave visual when shift-moving
-vmap <S-Left> h
-vmap <S-Right> l
-vmap <S-Up> k
-vmap <S-Down> j
-
-"use alt-arrow for tab navigation:
-map <A-Down> :tabedit<CR>
-imap <A-Down> <C-O>:tabedit<CR>
-
-map <A-Up> :q<CR>
-imap <A-Up> <C-\><C-O>:q<CR>
-
-"use control-c/x/v for X11 clipboard
-vmap <C-c> "+y
-map <C-c> "+y
-
-vmap <C-x> "+c
-map <C-x> "+c
-
-map <C-v> "+gP
-imap <C-v> <C-O>"+gP
-vmap <C-v> "+gP
-
-inoremap <C-w> <C-O>:w<CR>
 
 "" indent guides :)
 let g:indent_guides_auto_colors = 0
@@ -119,37 +65,18 @@ set wildignore+=*.pyc " Python byte code
 set wildignore+=.rbx " rbx byte code
 
 
-"" don't put things anywhere
-set backupdir=~/.vimdata/backup//
-set dir=~/.vimdata/swap//
-set viewdir=~/.vimdata/view//
-set undodir=~/.vimdata/undo//
-
 "" set statusline=%#StatColor#%F%=[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y[%c,%l/%L]%*
 
-au InsertLeave * hi TabLineSel cterm=NONE
-au InsertEnter * hi TabLineSel cterm=Bold
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
-hi TabLine ctermbg=None ctermfg=DarkBlue cterm=NONE
-hi TabLineSel ctermbg=None cterm=NONE
-hi TabLineFill ctermbg=None cterm=NONE
+Bundle 'gmarik/vundle'
 
-
-""
-call pathogen#infect()
-call pathogen#helptags()
+Bundle 'jellybeans'
+Bundle 'ctrlp'
+Bundle 'nathanaelkane/vim-indent-guides'
 
 color jellybeans
-
-"hi link IndentGuidesEven VertSplit
-"hi IndentGuidesOdd None
-
-
-"" CTRLP {
-let g:ctrlp_open_new_file = 'r'
-let g:ctrlp_open_multi = '1t'
-
-"" }
 
 "" use local vimrc if available {
  if filereadable(expand("~/.vimrc.local"))
