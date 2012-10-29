@@ -4,6 +4,9 @@ set encoding=utf-8
 set showcmd                     " display incomplete commands
 filetype plugin indent on       " load file type plugins + indentation
 
+"" no, i don't want swap files
+set noswapfile
+
 "" yep, I want a mouse (sometimes)
 set mouse=a
 "" and my scripts are utf-8 encoded
