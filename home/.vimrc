@@ -78,6 +78,7 @@ Bundle 'gmarik/vundle'
 Bundle 'jellybeans'
 Bundle 'ctrlp'
 Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'mbbill/undotree'
 
 color jellybeans
 
