@@ -12,6 +12,10 @@ set mouse=a
 "" and my scripts are utf-8 encoded
 scriptencoding utf-8
 
+"" draw a column at the textwidth and at 80 chars width, so I can wrap long 
+"" lines like this one.
+set colorcolumn=+0,80
+
 "" Numbering
 set number                      " yep, I want line numbers
 highlight LineNr term=bold cterm=NONE ctermfg=DarkBlue ctermbg=NONE gui=NONE guifg=DarkBlue guibg=NONE
